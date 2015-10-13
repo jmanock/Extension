@@ -11,7 +11,7 @@
 
     // url from which the news feed is to be fetched
     // var feedUrl = '../xmlfeed.xml'; // local feed
-    var feedUrl = 'http://www.gcuf.edu.pk/feed';
+    var feedUrl = 'http://sports.espn.go.com/espn/rss/nhl/news';
 
     // Where to append the news feed
     var newsHolder = $('.news-feed');

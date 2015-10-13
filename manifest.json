@@ -10,7 +10,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "*://*.gcuf.edu.pk/*"
+    "*://*.espn.go.com/*"
   ],
   "icons":{
     "16":"images/icon16.png",
