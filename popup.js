@@ -1,3 +1,6 @@
 $(document).ready(function(){
-  console.log('Hello Friend');
+  /* Todo
+    ~ Scrape nhl site somehow
+    ~ Add games to html file
+  */
 });
