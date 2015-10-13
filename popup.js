@@ -3,4 +3,5 @@ $(document).ready(function(){
     ~ Scrape nhl site somehow
     ~ Add games to html file
   */
+  
 });
