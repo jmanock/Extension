@@ -1,23 +1,30 @@
 {
-  "name":"BrowserExtension",
-  "version":"0.0.1",
-  "manifest_version":2,
-  "description":"Description...",
-  "omnibox":{"keyword":"yeah son"},
+  "mainfest_version":2,
+
+  "name":"News Caster",
+  "short_name":"news",
+  "description":"keep yourself upto date with the latest info",
+  "version":"0.1",
+
+  "permissions":[
+    "alarms",
+    "tabs",
+    "webNavigation",
+    "*://*.yahoo.com/*"
+  ],
+  "icons":{
+    "16":"images/icon16.png",
+    "48":"images/icon48.png",
+    "128":"images/icon128.png"
+  },
+  "homepage_url":"http://insert_web_site_here.com/",
   "browser_action":{
-    "default_title":"Thats the tool tip",
+    "default_title":"News Cast",
+    "default_icon":"images/icon.png",
     "default_popup":"popup.html"
   },
   "background":{
-    "scripts":["background.js"],
-    "persistent":false
-  },
-  "chrome_url_overrides":{
-    "newtab":"newtab/newtab.html"
-  },
-  "content_scripts":[{
-    "matches":["http://*/*/", "https://*/*"],
-    "js":["content.js"]
-    }],
-    "devtools_page":"devtools/devtools.html"
+    "scripts":["scripts/jquery.js","scripts/background.js"],
+    "presistent":false
+  }
 }
