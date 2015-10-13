@@ -1,5 +1,5 @@
 {
-  "mainfest_version":2,
+  "manifest_version":2,
 
   "name":"News Caster",
   "short_name":"news",
@@ -10,7 +10,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "*://*.yahoo.com/*"
+    "*://*.gcuf.edu.pk/*"
   ],
   "icons":{
     "16":"images/icon16.png",
