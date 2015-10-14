@@ -1,12 +1,5 @@
 (function(){
 
-  /**
-  * TODO:
-  *     `chrome.browserAction.setBadgeText({text: "1"});
-  *      whenever a new feed item is found, attach a badge number to extension icon
-  */
-
-
   var FeedReader = function() {
 
     // url from which the news feed is to be fetched
