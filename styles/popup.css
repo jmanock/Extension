@@ -82,17 +82,22 @@ a {
 
 li {
 	list-style-type: none;
-	background-color: #A2A2A2;
 	border: 1px solid #21262C;
 	border-radius: 3px;
-	color: #3A4045;
 	font-family: "GothamMedium", Helvetica, Arial, sans-serif;
-	font-size: 12px;
+	font-size: 15px;
 	outline: none;
 	padding: 6px;
 	text-shadow: none;
-
 	-webkit-transition: all 0.4s;
+}
+li:nth-child(even){
+	color:#222222;
+	background-color:#888888;
+}
+li:nth-child(odd){
+	color:#888888;
+	background-color:#222222;
 }
 ul {
 	padding: 0px;

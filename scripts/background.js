@@ -1,4 +1,13 @@
 (function(){
+/* TODO
+  ~ Change the pics
+  ~ Add some color
+  ~ Make it a little better
+  ~ Maybe able to track golfers
+  ~ Seach for golfers?
+  ~ refresh button at top
+*/
+
   var GolfReader = function(){
     var url = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
