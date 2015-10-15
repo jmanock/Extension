@@ -10,7 +10,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "*://*.espn.go.com/*"
+    "*://*.pgatour.com/*"
   ],
   "icons":{
     "16":"images/icon16.png",
