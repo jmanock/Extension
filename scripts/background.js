@@ -1,17 +1,24 @@
 (function(){
 
+  /**
+  * TODO:
+  *     `chrome.browserAction.setBadgeText({text: "1"});
+  *      whenever a new feed item is found, attach a badge number to extension icon
+  */
+
+
   var FeedReader = function() {
 
     // url from which the news feed is to be fetched
     // var feedUrl = '../xmlfeed.xml'; // local feed
-    var feedUrl = 'http://sports.espn.go.com/espn/rss/nhl/news';
+    var feedUrl = 'http://sports.espn.go.com/espn/rss/nhl/news/';
 
     // Where to append the news feed
     var newsHolder = $('.news-feed');
 
     // What to add before and after feed content e.g. '<ul>'' and '</ul>' respectively
     var beforeFeed = '<ul>';
-    var afterFeed = '</ul>';
+    var afterFeed = '</ul>'
 
     // What to append before and after the feed item e.g. '<li>' and '</li>' respectively
     var beforeFeedItem = '<li>';
