@@ -11,7 +11,7 @@
 
     // What to add before and after feed content e.g. '<ul>'' and '</ul>' respectively
     var beforeFeed = '<ul>';
-    var afterFeed = '</ul>'
+    var afterFeed = '</ul>';
 
     // What to append before and after the feed item e.g. '<li>' and '</li>' respectively
     var beforeFeedItem = '<li>';
