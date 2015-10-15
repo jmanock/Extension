@@ -11,7 +11,7 @@
 
     // url from which the news feed is to be fetched
     // var feedUrl = '../xmlfeed.xml'; // local feed
-    var feedUrl = 'http://www.pgatour.com/data/R/464/field.json';
+    var feedUrl = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
     // Where to append the news feed
     var newsHolder = $('.news-feed');
 
@@ -107,18 +107,26 @@
 
 
         $(xml).each(function(index, elem){
-          var players = elem.Tournament.Players;
-          $(players).each(function(x,s){
-            var name = s.PlayerName;
-            var parts = name.split(', ');
-            var knewName = parts[1]+' '+ parts[0];
-            var anchor = beforeFeedItem + knewName + afterFeedItem;
-            anchors += anchor;
+          var something = elem.leaderboard.players;
+          $(something).each(function(i,x){
+            var today = x.today;
+            if(x.today !== null){
+              var thru = x.thru;
+              var total = x.total;
+              if(total === 0){total = 'E';}
+              if(today === 0){today = 'E';}
+              var firstName = x.player_bio.first_name;
+              var lastName = x.player_bio.last_name;
+              var fullName = firstName + ' ' + lastName;
+              var anchor = beforeFeedItem + fullName + ' Total: '+total+' Thru: '+thru+' Today: '+today+afterFeedItem;
+              anchors += anchor;
+            }
+
           });
-          anchors+=afterFeed;
-          newsHolder.append(anchors);
 
         });
+        anchors += afterFeed;
+        newsHolder.append(anchors);
 
       } // end `populateExt` function
 
