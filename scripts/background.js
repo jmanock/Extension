@@ -1,120 +1,86 @@
 (function(){
+  var GolfReader = function(){
+    var url = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
+    var scoreHolder = $('.leaderboard');
 
+    var open = '<ul>';
+    var close = '</ul>';
+    var openList = '<li>';
+    var closeList = '</li>';
 
-  var FeedReader = function() {
-    var feedUrl = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
-
-    var newsHolder = $('.news-feed');
-
-
-    var beforeFeed = '<ul>';
-    var afterFeed = '</ul>';
-
-
-    var beforeFeedItem = '<li>';
-    var afterFeedItem = '</li>';
-
-    function performAjaxSetup() {
-      $(document).ajaxStart(function() {
-        $("#reload").html('Loading... Please wait!');
+    function performAjaxSetup(){
+      $(document).ajaxStart(function(){
+        $('#reload').html('Loading... Please Wait');
         $('#reload').off();
       });
 
-      $(document).ajaxComplete(function(event, xhr, settings) {
-        $("#reload").html('Reload.');
+      $(document).ajaxComplete(function(event, xhr, settings){
+        $('#reload').html('Reload.');
         feed.bindUI();
       });
     }
 
     var feed = {
+      xml: '',
 
-      xml : '',
-
-      init : function() {
-
+      init:function(){
         this.bindUI();
         performAjaxSetup();
         this.loadFeed();
-
-      }, // end init
-
-      bindUI : function() {
-
-        $('#reload').on('click', function () {
+      },
+      bindUI:function(){
+        $('#reload').on('click', function(){
           feed.loadFeed();
         });
-
-      }, // end `bindUI` function
-
-      loadFeed : function() {
-
+      },
+      loadFeed:function(){
         this.fetchFeed();
-
-      }, // end `loadFeed` function
-
-
-      fetchFeed : function () {
-
-        newsHolder.empty();
+      },
+      fetchFeed:function(){
+        scoreHolder.empty();
 
         $.ajax({
+          url:url,
+          dataType:'json',
+          method:'post',
 
-          url : feedUrl,
-          dataType : 'json',
-          method : 'post',
-
-          beforeSend : function () { },
-
-          success : function ( xml ) {
-
-            feed.populateExt( xml );
+          beforeSend:function(){},
+          success:function(xml){
+            feed.populateExt(xml);
           },
-
-          complete : function () { },
+          complete:function(){},
         });
-
-      }, // end `fetchFeed`
-
-      populateExt : function ( xml ) {
-
-        var anchors = beforeFeed;
+      },
+      populateExt:function(xml){
+        var anchors = open;
 
         $(xml).each(function(index, elem){
-          var something = elem.leaderboard.players;
-          $(something).each(function(i,x){
-            var today = x.today;
-            if(x.today !== null){
-              var thru = x.thru;
-              var total = x.total;
+          var players = elem.leaderboard.players;
+          $(players).each(function(k,v){
+            var today = v.today;
+            if(today !== null){
+              var thru = v.thru;
+              var total = v.thru;
               if(total === 0){total = 'E';}
               if(today === 0){today = 'E';}
-              var firstName = x.player_bio.first_name;
-              var lastName = x.player_bio.last_name;
-              var fullName = firstName + ' ' + lastName;
-              var anchor = beforeFeedItem + fullName + ' Total: '+total+' Thru: '+thru+' Today: '+today+afterFeedItem;
-              anchors += anchor;
+              var firstName = v.player_bio.first_name;
+              var lastName = v.player_bio.last_name;
+              var fullName = firstName+' '+lastName;
+              var anchor = openList + fullName + ' Total:' + total + ' Thru: '+ thru+' Today: '+today+closeList;
+              console.log(anchor);
+              anchors +=anchor;
             }
-
           });
-
         });
-        anchors += afterFeed;
-        newsHolder.append(anchors);
+        anchors += close;
+        scoreHolder.append(anchors);
+      }
 
-      } // end `populateExt` function
-
-    }; // end `feed` object
-
+    };
     return feed;
-
-  }; // end FeedReader
-
-
+  };
   $(function(){
-
-    var gcufFeed = new FeedReader();
-    gcufFeed.init();
-
+    var something = new GolfReader();
+    something.init();
   });
-
 })();
