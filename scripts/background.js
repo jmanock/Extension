@@ -98,19 +98,21 @@
             if(thru === null){thru = 'Final';}
             if(thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
-            // var anchor = openList+
-            // fullName +
-            // ' total: '+total +
-            // ' Thru: '+thru+
-            // ' Today: '+
-            // today+closeList;
+            if(total <= -1){
+              total = '<span class="under"> Total: '+total+'</span>';
+            }else{
+              total = '<span class="over"> Total: '+total+'</span>';
+            }
 
             var anchor = '<li>'+
             '<span class="fname">'+fullName + "</span>"+
-            "<span class='total'> Total: "+total+'</span>'+
+            total+
             '<span class="thru"> Thru: '+thru+'</span>'+
             '<span class="today"> Today: '+today+'</span>'+
             '</li>';
+            if(total <= -1){
+
+            }
 
             anchors +=anchor;
           });

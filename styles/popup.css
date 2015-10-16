@@ -56,3 +56,20 @@ li a {
 	border: none;
 	display: block;
 }
+
+.fname{
+	font-size:15px;
+	color:orange;
+}
+.under{
+	color:red;
+}
+.over{
+	color:black;
+}
+.thru{
+	color:white;
+}
+.today{
+	color:green;
+}
