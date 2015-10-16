@@ -2,7 +2,6 @@
 /* TODO
   ~ Change the pics (title, nav-bar, extension)
   ~ Add some color (maybe not just black and gray something inviting)
-  ~ Seach for golfers? (not sure how to do this with just jquery)
   ~ refresh button at top (easy enough)
   ~ Make a homepage???
 */
@@ -65,19 +64,40 @@
         $(xml).each(function(index, elem){
           var players = elem.leaderboard.players;
           $(players).each(function(k,v){
+            // var today = v.today;
+            //
+            // if(today !== null){
+            //   var thru = v.thru;
+            //   var total = v.thru;
+            //   if(total === 0){total = 'E';}
+            //   if(today === 0){today = 'E';}
+            //   var firstName = v.player_bio.first_name;
+            //   var lastName = v.player_bio.last_name;
+            //   var fullName = firstName+' '+lastName;
+            //   var anchor = openList + fullName + ' Total:' + total + ' Thru: '+ thru+' Today: '+today+closeList;
+            //
+            //   anchors +=anchor;
+            // }
+
+            /* NEED
+              ~ Name √
+              ~ Overall score
+              ~ Hole number
+              ~ Position????
+              ~ Todays score???
+            */
+            var firstName = v.player_bio.first_name;
+            var lastName = v.player_bio.last_name;
+            var fullName = firstName +' '+lastName;
+            var total = v.total;
+            var thru = v.thru;
             var today = v.today;
-            if(today !== null){
-              var thru = v.thru;
-              var total = v.thru;
-              if(total === 0){total = 'E';}
-              if(today === 0){today = 'E';}
-              var firstName = v.player_bio.first_name;
-              var lastName = v.player_bio.last_name;
-              var fullName = firstName+' '+lastName;
-              var anchor = openList + fullName + ' Total:' + total + ' Thru: '+ thru+' Today: '+today+closeList;
-              console.log(anchor);
-              anchors +=anchor;
-            }
+            console.log(v);
+            if(today === null){today = '';}
+            if(today === 0){today='E';}
+            if(thru === null){thru = 'Final';}
+            var anchor = openList + fullName +' Total: '+total + ' Thru: '+thru+' Today: '+ today+closeList;
+            anchors +=anchor;
           });
         });
         anchors += close;
@@ -102,8 +122,6 @@
           count++;
         }
       });
-      var numberItems = count;
-      $('#filter-count').text('number of players'+count);
     });
   });
 })();
