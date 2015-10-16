@@ -63,6 +63,7 @@
 
         $(xml).each(function(index, elem){
           var tournyName = elem.leaderboard.tournament_name;
+
           $('#name').append('<h1>'+tournyName+' Leaderboard'+ '</h1>');
           var players = elem.leaderboard.players;
           $(players).each(function(k,v){
@@ -73,7 +74,25 @@
             var thru = v.thru;
             var today = v.today;
             //console.log(v);
-            if(today === null){today = '';}
+            if(today === null){
+              var currentRound = v.current_round;
+              var round = v.rounds;
+              $(round).each(function(i,e){
+                if(currentRound === i+1){
+                  var something = e.tee_time;
+                  something = something.slice(11,16);
+                  var hours = something.slice(0,2);
+                  var minutes = something.slice(3,5);
+                  if(hours >= 13){
+                    var hour =hours - 12;
+                    today = hour +':'+minutes+'pm';
+                  }else{
+                     today = hours+':'+minutes+'am';
+                  }
+                }
+
+              });
+            }
             if(today === 0){today='E';}
             if(thru === null){thru = 'Final';}
             if(total === 0){total = 'E';}
