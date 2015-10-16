@@ -3,6 +3,7 @@
   ~ Change the pics (nav-bar, extension)
   ~ Make a homepage???
   ~ Buttons to change the layout (total, today)
+  ~ Add the tourney name
 */
 
   var GolfReader = function(){
@@ -61,6 +62,8 @@
         var anchors = open;
 
         $(xml).each(function(index, elem){
+          var tournyName = elem.leaderboard.tournament_name;
+          $('#name').append('<h1>'+tournyName+' Leaderboard'+ '</h1>');
           var players = elem.leaderboard.players;
           $(players).each(function(k,v){
             var firstName = v.player_bio.first_name;
@@ -69,7 +72,7 @@
             var total = v.total;
             var thru = v.thru;
             var today = v.today;
-            console.log(v);
+            //console.log(v);
             if(today === null){today = '';}
             if(today === 0){today='E';}
             if(thru === null){thru = 'Final';}
