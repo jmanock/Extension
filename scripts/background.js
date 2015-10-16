@@ -1,11 +1,10 @@
 (function(){
 /* TODO
-  ~ Change the pics
-  ~ Add some color
-  ~ Make it a little better
-  ~ Maybe able to track golfers
-  ~ Seach for golfers?
-  ~ refresh button at top
+  ~ Change the pics (title, nav-bar, extension)
+  ~ Add some color (maybe not just black and gray something inviting)
+  ~ Seach for golfers? (not sure how to do this with just jquery)
+  ~ refresh button at top (easy enough)
+  ~ Make a homepage???
 */
 
   var GolfReader = function(){
