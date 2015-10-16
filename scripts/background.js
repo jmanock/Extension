@@ -3,7 +3,8 @@
   ~ Change the pics (nav-bar, extension)
   ~ Make a homepage???
   ~ Buttons to change the layout (total, today)
-  ~ Add the tourney name
+  BUGS
+  ~ Tournament name is adding on refresh
 */
 
   var GolfReader = function(){
@@ -95,6 +96,7 @@
             }
             if(today === 0){today='E';}
             if(thru === null){thru = 'Final';}
+            if(thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
             var anchor = openList + fullName +' Total: '+total + ' Thru: '+thru+' Today: '+ today+closeList;
             anchors +=anchor;
@@ -113,13 +115,13 @@
   });
   $(document).ready(function(){
     $('#filter').keyup(function(){
-      var filter = $(this).val(),count = 0;
+      var filter = $(this).val();
       $('ul li').each(function(){
         if($(this).text().search(new RegExp(filter, 'i'))<0){
           $(this).fadeOut();
         }else{
           $(this).show();
-          count++;
+
         }
       });
     });
