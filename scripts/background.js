@@ -98,7 +98,20 @@
             if(thru === null){thru = 'Final';}
             if(thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
-            var anchor = openList + fullName +' Total: '+total + ' Thru: '+thru+' Today: '+ today+closeList;
+            // var anchor = openList+
+            // fullName +
+            // ' total: '+total +
+            // ' Thru: '+thru+
+            // ' Today: '+
+            // today+closeList;
+
+            var anchor = '<li>'+
+            '<span class="fname">'+fullName + "</span>"+
+            "<span class='total'> Total: "+total+'</span>'+
+            '<span class="thru"> Thru: '+thru+'</span>'+
+            '<span class="today"> Today: '+today+'</span>'+
+            '</li>';
+
             anchors +=anchor;
           });
         });
