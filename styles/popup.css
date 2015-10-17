@@ -41,14 +41,14 @@ li {
 	text-shadow: none;
 	-webkit-transition: all 0.4s;
 }
-li:nth-child(even){
+/*tr:nth-child(even){
 	color:orange;
 	background-color:#444444;
 }
-li:nth-child(odd){
+tr:nth-child(odd){
 	color:green;
 	background-color:#222222;
-}
+}*/
 ul {
 	padding: 0px;
 }

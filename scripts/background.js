@@ -3,8 +3,12 @@
   ~ Change the pics (nav-bar, extension)
   ~ Make a homepage???
   ~ Buttons to change the layout (total, today)
+  ~ Figure out how to add the header to the top of the page
+  ~ Smaller refresh button
+  ~ Run a script to get the places
   BUGS
   ~ Tournament name is adding on refresh
+
 */
 
   var GolfReader = function(){
@@ -101,7 +105,7 @@
             }else{
               total = '<td class="over"> '+total+'</td>';
             }
-            if(today != null){
+            if(today !== null){
               var anchor = '<tr>'+
               '<td class="fname">'+fullName + "</td>"+
               total+
@@ -132,7 +136,7 @@
   $(document).ready(function(){
     $('#filter').keyup(function(){
       var filter = $(this).val();
-      $('ul li').each(function(){
+      $('tr').each(function(){
         if($(this).text().search(new RegExp(filter, 'i'))<0){
           $(this).fadeOut();
         }else{
