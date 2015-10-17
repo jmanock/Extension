@@ -106,11 +106,16 @@
               total = '<td class="over"> '+total+'</td>';
             }
             if(today !== null){
+              if(today <= -1){
+                today = '<td class="under"> '+today+'</td>';
+              }else{
+                today = '<td class="over"> '+today+'</td>';
+              }
               var anchor = '<tr>'+
               '<td class="fname">'+fullName + "</td>"+
               total+
               '<td class="thru"> '+thru+'</td>'+
-              '<td class="today"> '+today+'</td>'+
+              today+
               '</tr>';
 
               anchors += anchor;
