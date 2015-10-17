@@ -10,9 +10,9 @@
   var GolfReader = function(){
     var url = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
-
-    var open = '<ul>';
-    var close = '</ul>';
+    $('.leaderboard').after('<tbody><tr><th>Name</th><th>Total</th><th>Thru</th><th>Today</th></tr></tbody>');
+    var open = '<tr>';
+    var close = '</tr>';
     var openList = '<li>';
     var closeList = '</li>';
 
@@ -61,7 +61,6 @@
       },
       populateExt:function(xml){
         var anchors = open;
-
         $(xml).each(function(index, elem){
           var tournyName = elem.leaderboard.tournament_name;
 
@@ -99,26 +98,26 @@
             if(thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
             if(total <= -1){
-              total = '<span class="under"> Total: '+total+'</span>';
+              total = '<td class="under"> '+total+'</td>';
             }else{
-              total = '<span class="over"> Total: '+total+'</span>';
+              total = '<td class="over"> '+total+'</td>';
             }
 
-            var anchor = '<li>'+
-            '<span class="fname">'+fullName + "</span>"+
+            var anchor = '<tr>'+
+            '<td class="fname">'+fullName + "</td>"+
             total+
-            '<span class="thru"> Thru: '+thru+'</span>'+
-            '<span class="today"> Today: '+today+'</span>'+
-            '</li>';
-            if(total <= -1){
-
-            }
-
-            anchors +=anchor;
+            '<td class="thru"> '+thru+'</td>'+
+            '<td class="today"> '+today+'</td>'+
+            '</tr>';
+            anchors += anchor;
           });
+
         });
+
         anchors += close;
+
         scoreHolder.append(anchors);
+
       }
 
     };
