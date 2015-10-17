@@ -10,7 +10,6 @@
   var GolfReader = function(){
     var url = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
-    $('.leaderboard').after('<tbody><tr><th>Name</th><th>Total</th><th>Thru</th><th>Today</th></tr></tbody>');
     var open = '<tr>';
     var close = '</tr>';
     var openList = '<li>';
@@ -102,14 +101,17 @@
             }else{
               total = '<td class="over"> '+total+'</td>';
             }
+            if(today != null){
+              var anchor = '<tr>'+
+              '<td class="fname">'+fullName + "</td>"+
+              total+
+              '<td class="thru"> '+thru+'</td>'+
+              '<td class="today"> '+today+'</td>'+
+              '</tr>';
 
-            var anchor = '<tr>'+
-            '<td class="fname">'+fullName + "</td>"+
-            total+
-            '<td class="thru"> '+thru+'</td>'+
-            '<td class="today"> '+today+'</td>'+
-            '</tr>';
-            anchors += anchor;
+              anchors += anchor;
+            }
+
           });
 
         });
