@@ -4,6 +4,7 @@
   ~ Make a homepage???
   ~ Smaller refresh button (change the color)
   ~ Run a script to get the places
+  ~ Maybe keep the players that missed the cut in
   BUG
   ~ Not sure that the tee times are going to show up with both nulls (have to see)
 */
