@@ -6,9 +6,6 @@
   ~ Figure out how to add the header to the top of the page
   ~ Smaller refresh button
   ~ Run a script to get the places
-  BUGS
-  ~ Tournament name is adding on refresh
-
 */
 
   var GolfReader = function(){
@@ -16,8 +13,6 @@
     var scoreHolder = $('.leaderboard');
     var open = '<tr>';
     var close = '</tr>';
-    var openList = '<li>';
-    var closeList = '</li>';
 
     function performAjaxSetup(){
       $(document).ajaxStart(function(){
@@ -127,7 +122,7 @@
         });
 
         anchors += close;
-
+        scoreHolder.append('<thead class="head"><tr><th>Name</th><th>Total</th><th>Thru</th><th>Today</th></tr></thead>');
         scoreHolder.append(anchors);
 
       }
