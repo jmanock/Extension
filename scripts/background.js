@@ -3,8 +3,7 @@
   ~ Change the pics (nav-bar, extension)
   ~ Make a homepage???
   ~ Buttons to change the layout (total, today)
-  ~ Figure out how to add the header to the top of the page
-  ~ Smaller refresh button
+  ~ Smaller refresh button (change the color)
   ~ Run a script to get the places
 */
 
@@ -124,7 +123,7 @@
         anchors += close;
         scoreHolder.append('<thead class="head"><tr><th>Name</th><th>Total</th><th>Thru</th><th>Today</th></tr></thead>');
         scoreHolder.append(anchors);
-
+        $('#filter').focus();
       }
 
     };

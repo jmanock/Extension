@@ -1,8 +1,7 @@
-
-
 body {
 	width: 500px;
 	overflow: scroll;
+	font-size:15px;
 }
 #reload {
 	background-color: #26B064;
@@ -30,35 +29,8 @@ body {
 	text-align: center;
 }
 
-li {
-	list-style-type: none;
-	border: 1px solid #21262C;
-	border-radius: 3px;
-	font-family: "GothamMedium", Helvetica, Arial, sans-serif;
-	font-size: 15px;
-	outline: none;
-	padding: 6px;
-	text-shadow: none;
-	-webkit-transition: all 0.4s;
-}
-/*tr:nth-child(even){
-	color:orange;
-	background-color:#444444;
-}
-tr:nth-child(odd){
-	color:green;
-	background-color:#222222;
-}*/
-ul {
-	padding: 0px;
-}
-li a {
-	border: none;
-	display: block;
-}
-
 .fname{
-	font-size:15px;
+	font-size:17px;
 	color:orange;
 }
 .under{
@@ -68,8 +40,5 @@ li a {
 	color:black;
 }
 .thru{
-	color:black;
-}
-.today{
 	color:green;
 }
