@@ -41,6 +41,7 @@
       },
       bindUI:function(){
         $('#reload').on('click', function(){
+          $('h1').remove();
           feed.loadFeed();
         });
       },
