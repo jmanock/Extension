@@ -2,9 +2,10 @@
 /* TODO
   ~ Change the pics (nav-bar, extension)
   ~ Make a homepage???
-  ~ Buttons to change the layout (total, today)
   ~ Smaller refresh button (change the color)
   ~ Run a script to get the places
+  BUG
+  ~ Not sure that the tee times are going to show up with both nulls (have to see)
 */
 
   var GolfReader = function(){
@@ -71,7 +72,9 @@
             var total = v.total;
             var thru = v.thru;
             var today = v.today;
-            //console.log(v);
+            $('#radioToday').click(function(){
+              console.log(v);
+            });
             if(today === null){
               var currentRound = v.current_round;
               var round = v.rounds;
@@ -108,9 +111,9 @@
               }
               var anchor = '<tr>'+
               '<td class="fname">'+fullName + "</td>"+
-              total+
-              '<td class="thru"> '+thru+'</td>'+
               today+
+              '<td class="thru"> '+thru+'</td>'+
+              total+
               '</tr>';
 
               anchors += anchor;
@@ -121,7 +124,7 @@
         });
 
         anchors += close;
-        scoreHolder.append('<thead class="head"><tr><th>Name</th><th>Total</th><th>Thru</th><th>Today</th></tr></thead>');
+        scoreHolder.append('<thead class="head"><tr><th>Name</th><th>Today</th><th>Thru</th><th>Total</th></tr></thead>');
         scoreHolder.append(anchors);
         $('#filter').focus();
       }
@@ -133,6 +136,8 @@
     var something = new GolfReader();
     something.init();
   });
+
+  // Search for Golfers in list
   $(document).ready(function(){
     $('#filter').keyup(function(){
       var filter = $(this).val();

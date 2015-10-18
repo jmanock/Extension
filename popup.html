@@ -9,8 +9,12 @@
   <div id="class">
     <div id="name"></div>
     <div class="search">
-      <input type="text" class='text-input' id='filter' name='search' placeholder='Search Golfer'>
-      <div id="reload" class='button' tabindex='5'>Refresh</div>
+      <form action="">
+        <input type="text" class='text-input' id='filter' name='search' placeholder='Search Golfers'>
+        <input type="radio" name='order' checked>Total
+        <input type="radio" name='order' id='radioToday'>Today
+        <div id='reload' class='button' tabindex='5'>Refresh</div>
+      </form>
     </div>
     <div class=''>
       <table class='leaderboard'></table>
