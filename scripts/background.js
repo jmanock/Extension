@@ -5,11 +5,11 @@
   ~ Header change to pic??
 
   BUGS
-  ~ Might be a bug with the double nulls for today
+  ~ Might be a bug with the double nulls in today var
 */
 
   var GolfReader = function(){
-    var url = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
+    var url = 'http://www.pgatour.com/data/r/047/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
     var open = '<tr>';
     var close = '</tr>';
