@@ -2,7 +2,7 @@
 
 
   var FeedReader = function() {
-    var feedUrl = 'http://www.pgatour.com/data/R/464/leaderboard-v2.json';
+    var feedUrl = 'http://www.pgatour.com/data/r/current/schedule.json';
 
     var newsHolder = $('.news-feed');
 
@@ -80,22 +80,23 @@
         var anchors = beforeFeed;
 
         $(xml).each(function(index, elem){
-          var something = elem.leaderboard.players;
-          $(something).each(function(i,x){
-            var today = x.today;
-            if(x.today !== null){
-              var thru = x.thru;
-              var total = x.total;
-              if(total === 0){total = 'E';}
-              if(today === 0){today = 'E';}
-              var firstName = x.player_bio.first_name;
-              var lastName = x.player_bio.last_name;
-              var fullName = firstName + ' ' + lastName;
-              var anchor = beforeFeedItem + fullName + ' Total: '+total+' Thru: '+thru+' Today: '+today+afterFeedItem;
-              anchors += anchor;
-            }
-
-          });
+          // var something = elem.leaderboard.players;
+          // $(something).each(function(i,x){
+          //   var today = x.today;
+          //   if(x.today !== null){
+          //     var thru = x.thru;
+          //     var total = x.total;
+          //     if(total === 0){total = 'E';}
+          //     if(today === 0){today = 'E';}
+          //     var firstName = x.player_bio.first_name;
+          //     var lastName = x.player_bio.last_name;
+          //     var fullName = firstName + ' ' + lastName;
+          //     var anchor = beforeFeedItem + fullName + ' Total: '+total+' Thru: '+thru+' Today: '+today+afterFeedItem;
+          //     anchors += anchor;
+          //   }
+          //
+          // });
+          console.log(index,elem);
 
         });
         anchors += afterFeed;
