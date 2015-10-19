@@ -1,12 +1,11 @@
 (function(){
 /* TODO
   ~ Change the pics (nav-bar, extension)
-  ~ Make a homepage???
-  ~ Smaller refresh button (change the color)
-  ~ Run a script to get the places
-  ~ Maybe keep the players that missed the cut in
-  BUG
-  ~ Not sure that the tee times are going to show up with both nulls (have to see)
+  ~ Better color and more boom (refresh button, input box, lists)
+  ~ Header change to pic??
+
+  BUGS
+  ~ Might be a bug with the double nulls for today
 */
 
   var GolfReader = function(){
@@ -73,9 +72,7 @@
             var total = v.total;
             var thru = v.thru;
             var today = v.today;
-            $('#radioToday').click(function(){
-              console.log(v);
-            });
+
             if(today === null){
               var currentRound = v.current_round;
               var round = v.rounds;
