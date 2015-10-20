@@ -16,12 +16,12 @@
 
     function performAjaxSetup(){
       $(document).ajaxStart(function(){
-        $('#reload').html('Loading... Please Wait');
-        $('#reload').off();
+        $('#refresh').html('Loading... Please Wait');
+        $('#refresh').off();
       });
 
       $(document).ajaxComplete(function(event, xhr, settings){
-        $('#reload').html('Reload.');
+        $('#refresh').html('Reload.');
         feed.bindUI();
       });
     }
@@ -35,7 +35,7 @@
         this.loadFeed();
       },
       bindUI:function(){
-        $('#reload').on('click', function(){
+        $('#refresh').on('click', function(){
           $('h1').remove();
           feed.loadFeed();
         });
