@@ -9,9 +9,15 @@ body{
 table{
 	width:400px;
 }
+input{
+	background-color:#555555;
+}
+
 thead{
 	color:white;
 }
+
+
 tr:nth-child(odd){
 	background-color:#333333;
 }
@@ -24,12 +30,12 @@ tr:nth-child(even){
 	text-align:left;
 }
 .under{
-	color:red;
+	color:#00ff00;
 	text-align:center;
 }
 .over{
 	color:black;
-	text-align:right;
+	text-align:center;
 }
 .thru{
 	text-align:center;
