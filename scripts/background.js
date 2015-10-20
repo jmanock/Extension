@@ -63,7 +63,7 @@
         $(xml).each(function(index, elem){
           var tournyName = elem.leaderboard.tournament_name;
 
-          $('#name').append('<h1>'+tournyName+' Leaderboard'+ '</h1>');
+          $('#name').append('<h1>'+tournyName+ '</h1>');
           var players = elem.leaderboard.players;
           $(players).each(function(k,v){
             var firstName = v.player_bio.first_name;
