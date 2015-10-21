@@ -83,7 +83,7 @@
                   var hours = something.slice(0,2);
                   var minutes = something.slice(3,5);
                   if(hours >= 13){
-                    var hour =hours - 12;
+                    var hour = hours - 12;
                      today = hour +':'+minutes+'pm';
                   }else{
                       today = hours+':'+minutes+'am';
@@ -117,7 +117,7 @@
 
               anchors += anchor;
             }
-
+            console.log(today);
           });
 
         });
