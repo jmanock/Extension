@@ -72,11 +72,9 @@
                   var minutes = teeTime.slice(3,5);
                   if(hours >= 13){
                     var hour = hours -12;
-                    //today = hour +':'+minutes+'pm';
-                    today = '<td class="time">'+hour +':'+minutes+'pm'+'</td>';
+                    today = hour +':'+minutes+'pm';
                   }else{
-                    //today = hours +':'+minutes+'am';
-                    today = '<td class="time">'+hours+':'+minutes+'am'+'</td>';
+                    today = hours +':'+minutes+'am';
                   }
                 }
               });
@@ -84,6 +82,11 @@
             if(today === 0){today = 'E';}
             if(thru === null || thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
+            if(today <= -1){
+              today = '<td class="under">'+today+'</td>';
+            }else{
+              today = '<td class="over">'+today+'</td>';
+            }
             if(total <= -1){
               total = '<td class="under"> '+total+'</td>';
             }else{
