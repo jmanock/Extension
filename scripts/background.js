@@ -1,10 +1,4 @@
 (function(){
-  /* TODO
-    ~ Keep tile from scolling
-    ~ Replace the black from the time
-    ~ Change the refresh button
-    ~ Make the input a little better
-  */
   var GolfReader = function(){
     var url = 'http://www.pgatour.com/data/r/047/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');

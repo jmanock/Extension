@@ -9,6 +9,7 @@ body{
 }
 table{
 	width:400px;
+	border-collapse:collapse;
 }
 
 #refresh{
