@@ -21,13 +21,6 @@ th{
 tr:hover{
 	background-color:#404040;
 }
-/*tr:nth-child(odd){
-	background-color:#333333;
-}
-tr:nth-child(even){
-	background-color:#222222;
-}*/
-
 
 .fname{
 	text-align:left;
@@ -45,4 +38,7 @@ tr:nth-child(even){
 .thru{
 	text-align:center;
 	color:#666666;
+}
+.time{
+	color:purple;
 }

@@ -1,4 +1,10 @@
 (function(){
+  /* TODO
+    ~ Keep tile from scolling
+    ~ Replace the black from the time
+    ~ Change the refresh button
+    ~ Make the input a little better
+  */
   var GolfReader = function(){
     var url = 'http://www.pgatour.com/data/r/047/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
@@ -84,8 +90,10 @@
             if(total === 0){total = 'E';}
             if(today <= -1){
               today = '<td class="under">'+today+'</td>';
-            }else{
+            }else if(today < 40 || today === 'E'){
               today = '<td class="over">'+today+'</td>';
+            }else{
+              today = '<td class="time">'+today+'</td>';
             }
             if(total <= -1){
               total = '<td class="under"> '+total+'</td>';
