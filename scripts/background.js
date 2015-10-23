@@ -18,7 +18,7 @@
       });
 
       $(document).ajaxComplete(function(event, xhr, settings){
-        $('#refresh').html('Reload.');
+        $('#refresh').html('Refresh');
         feed.bindUI();
       });
     }
@@ -78,9 +78,9 @@
                   var minutes = teeTime.slice(3,5);
                   if(hours >= 13){
                     var hour = hours -12;
-                    today = hour +':'+minutes+'p';
+                    today = hour +':'+minutes+'pm';
                   }else{
-                    today = hours +':'+minutes+'a';
+                    today = hours +':'+minutes+'am';
                   }
                 }
               });

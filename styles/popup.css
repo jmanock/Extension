@@ -10,16 +10,27 @@ body{
 table{
 	width:400px;
 }
-input{
-	background-color:#555555;
+
+#refresh{
+	width:100%;
+	height:40px;
+	border-radius:15px;
+	font-size:20px;
+	background-color:#131313;
+	color:#009900;
+	cursor:pointer;
+}
+button:focus{
+	outline:0;
 }
 
 th{
 	color:#555555;
 }
 
-tr:hover{
+tbody > tr:hover{
 	background-color:#404040;
+	cursor:default;
 }
 
 .fname{
@@ -40,5 +51,6 @@ tr:hover{
 	color:#666666;
 }
 .time{
-	color:purple;
+	color:#f8f8f8;
+	text-align:right;
 }
