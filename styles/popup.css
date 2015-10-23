@@ -9,7 +9,6 @@ body{
 }
 table{
 	width:400px;
-	border-collapse:collapse;
 }
 
 #refresh{
@@ -26,7 +25,8 @@ button:focus{
 }
 
 th{
-	color:#555555;
+	/*color:#555555;*/
+	color:#ff0000;
 }
 
 tbody > tr:hover{
@@ -53,5 +53,15 @@ tbody > tr:hover{
 }
 .time{
 	color:#f8f8f8;
-	text-align:right;
+	text-align:left;
+}
+.pos{
+	color:#f8f8f8;
+}
+thead > tr{
+	text-align:left;
+	font-size:16px;
+}
+footer{
+	color:#888888;
 }

@@ -49,6 +49,7 @@
       },
       populateExt:function(xml){
         var anchors = open;
+        var something = [];
         $(xml).each(function(index, elem){
           var tournyName = elem.leaderboard.tournament_name;
           $('#name').append('<h1>'+tournyName+'</h1>');
@@ -60,6 +61,7 @@
             var total = v.total;
             var thru = v.thru;
             var today = v.today;
+            var position = v.current_position;
 
             if(today === null){
               var currentRound = v.current_round;
@@ -79,6 +81,7 @@
                 }
               });
             }
+
             if(today === 0){today = 'E';}
             if(thru === null || thru === 18){thru = 'Final';}
             if(total === 0){total = 'E';}
@@ -91,19 +94,24 @@
             }
             if(total <= -1){
               total = '<td class="under"> '+total+'</td>';
-            }else{
+            }else if(total !== null){
               total = '<td class="over"> '+total+'</td>';
             }
-            var anchor = '<tr>'+'<td class="fname">'+fullName+'</td>'+
-            today+
-            '<td class="thru">'+thru+'</td>'+
-            total+'</tr>';
+            if(total !== null){
+              var anchor = '<tr>'+'<td class="pos">'+position +'<td class="fname">'+fullName+'</td>'+
+              today+
+              '<td class="thru">'+thru+'</td>'+
+              total+'</tr>';
 
-            anchors +=anchor;
+              anchors +=anchor;
+            }
+
+
+
           });
         });
         anchors += close;
-        scoreHolder.append('<thead class="head"><tr><th>Name</th><th>Today</th><th>Thru</th><th>Total</th></tr></thead>');
+        scoreHolder.append('<thead class="head"><tr><th>Pos</th><th>Name</th><th>Today</th><th>Thru</th><th>Total</th></tr></thead>');
         scoreHolder.append(anchors);
       }
     };
