@@ -111,7 +111,7 @@
           });
         });
         anchors += close;
-        scoreHolder.append('<thead class="head"><tr><th>Pos</th><th>Name</th><th>Today</th><th>Thru</th><th>Total</th></tr></thead>');
+        scoreHolder.append('<thead class="head"><tr><th>Pos</th><th>Player</th><th>Today</th><th>Thru</th><th>Total</th></tr></thead>');
         scoreHolder.append(anchors);
       }
     };
