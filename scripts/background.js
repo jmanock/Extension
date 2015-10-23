@@ -72,9 +72,9 @@
                   var minutes = teeTime.slice(3,5);
                   if(hours >= 13){
                     var hour = hours -12;
-                    today = hour +':'+minutes+'pm';
+                    today = hour +':'+minutes+'p';
                   }else{
-                    today = hours +':'+minutes+'am';
+                    today = hours +':'+minutes+'a';
                   }
                 }
               });

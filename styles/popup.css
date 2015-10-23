@@ -1,10 +1,11 @@
 body{
 	width:400px;
 	font-size:17px;
-	background-color:#555555;
+	background-color:#222222;
 }
 #name{
 	text-align:center;
+	color:#555555;
 }
 table{
 	width:400px;
@@ -13,24 +14,28 @@ input{
 	background-color:#555555;
 }
 
-thead{
-	color:white;
+th{
+	color:#555555;
 }
 
-
-tr:nth-child(odd){
+tr:hover{
+	background-color:#404040;
+}
+/*tr:nth-child(odd){
 	background-color:#333333;
 }
 tr:nth-child(even){
-	background-color:#555555;
-}
+	background-color:#222222;
+}*/
 
 
 .fname{
 	text-align:left;
+	color:#666666;
 }
+
 .under{
-	color:#00ff00;
+	color:#009900;
 	text-align:center;
 }
 .over{
@@ -39,4 +44,5 @@ tr:nth-child(even){
 }
 .thru{
 	text-align:center;
+	color:#666666;
 }
