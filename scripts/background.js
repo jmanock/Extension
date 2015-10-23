@@ -120,16 +120,4 @@
     Start.init();
   });
 
-  // Filters the Golfers in the search box
-  $('#filter').keyup(function(){
-    var filter = $(this).val();
-    $('tr').each(function(){
-      if($(this).text().search(new RegExp(filter, 'i'))<0){
-        $(this).fadeOut();
-      }else{
-        $(this).show();
-      }
-    });
-  });
-
 })();
