@@ -106,8 +106,6 @@
               anchors +=anchor;
             }
 
-
-
           });
         });
         anchors += close;
