@@ -1,6 +1,6 @@
 (function(){
   var GolfReader = function(){
-    var url = 'http://www.pgatour.com/data/r/489/leaderboard-v2.json';
+    var url = 'http://www.pgatour.com/data/r/457/leaderboard-v2.json';
     var scoreHolder = $('.leaderboard');
     var open = '<tr>';
     var close = '<tr>';
