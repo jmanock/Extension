@@ -1,0 +1,67 @@
+body{
+	width:400px;
+	font-size:17px;
+	background-color:#222222;
+}
+#name{
+	text-align:center;
+	color:#555555;
+}
+table{
+	width:400px;
+}
+
+#refresh{
+	width:100%;
+	height:40px;
+	border-radius:15px;
+	font-size:20px;
+	background-color:#131313;
+	color:#009900;
+	cursor:pointer;
+}
+button:focus{
+	outline:0;
+}
+
+th{
+	/*color:#555555;*/
+	color:#ff0000;
+}
+
+tbody > tr:hover{
+	background-color:#404040;
+	cursor:default;
+}
+
+.fname{
+	text-align:left;
+	color:#666666;
+}
+
+.under{
+	color:#009900;
+	text-align:center;
+}
+.over{
+	color:black;
+	text-align:center;
+}
+.thru{
+	text-align:center;
+	color:#666666;
+}
+.time{
+	color:#f8f8f8;
+	text-align:left;
+}
+.pos{
+	color:#f8f8f8;
+}
+thead > tr{
+	text-align:left;
+	font-size:16px;
+}
+footer{
+	color:#888888;
+}

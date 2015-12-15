@@ -1,0 +1,28 @@
+{
+  "manifest_version":2,
+
+  "name":"PGA Leaderboard",
+  "short_name":"ScoreBoard",
+  "version":"0.1",
+
+  "permissions":[
+    "alarms",
+    "tabs",
+    "webNavigation",
+    "*://*.pgatour.com/*"
+  ],
+  "icons":{
+    "16":"images/pgaIcon.png",
+    "48":"images/pgaIcon.png"
+  },
+  "homepage_url":"http://insert_web_site_here.com/",
+  "browser_action":{
+    "default_title":"Pga Leaderboard",
+    "default_icon":"images/pgaIcon.png",
+    "default_popup":"popup.html"
+  },
+  "background":{
+    "scripts":["scripts/jquery.js","scripts/background.js"],
+    "presistent":false
+  }
+}
