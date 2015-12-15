@@ -1,9 +1,8 @@
 {
   "manifest_version":2,
 
-  "name":"News Caster",
-  "short_name":"news",
-  "description":"keep yourself upto date with the latest info",
+  "name":"PGA Leaderboard",
+  "short_name":"ScoreBoard",
   "version":"0.1",
 
   "permissions":[
@@ -13,14 +12,13 @@
     "*://*.pgatour.com/*"
   ],
   "icons":{
-    "16":"images/icon16.png",
-    "48":"images/icon48.png",
-    "128":"images/icon128.png"
+    "16":"images/pgaIcon.png",
+    "48":"images/pgaIcon.png"
   },
   "homepage_url":"http://insert_web_site_here.com/",
   "browser_action":{
-    "default_title":"News Cast",
-    "default_icon":"images/icon.png",
+    "default_title":"Pga Leaderboard",
+    "default_icon":"images/pgaIcon.png",
     "default_popup":"popup.html"
   },
   "background":{
